@@ -11,7 +11,7 @@ include("add.php");
   $resultado= $conexion->query($query);
 //Si hay conexión los datos se llevarán hacía la tabla
   if($resultado){
-    header("Location: ../usuarios.php");
+    header("Location: ../tabla.php");
   }
   //Si no hay conexión aparecerá lo siguiente
   else{

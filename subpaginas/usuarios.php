@@ -75,10 +75,11 @@
         <div class="input-field col s12">
           <input class="validate" id="text" name="rol_id" required="required"> <label class="active" for="first_name">Rango</label>
         </div>
-        <input type="submit" value="REGISTRAR" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1"/>
+        <form action="tabla.php" method="POST">
+        <input type="submit" href="tabla.php" value="REGISTRAR" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1"/>
          <a href="tabla.php" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1">VER USUARIOS</a>
         </form>
-
+</form>
 
     </div>
 

@@ -1,8 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabla de usuarios</title>
+</head>
+<body>
 <?php
-    $Temperatura = rand(0, 75.00);
-    $Humedad = rand(0, 75.00);
-    $Gases = rand(0, 75.00);
-    echo '<h4>Temperatura: '.$Temperatura.'° </h4>';
-    echo '<h4>Humedad: '.$Humedad.'%</h4>';
-    echo '<h4>Gases: '.$Gases.'%</h4>';
+    $Temperatura = rand(0, 50.00);
+    $Humedad = rand(0, 50.00);
+    $Gases = rand(0, 50.00);
+    
+    echo '<h6>Temperatura: '.$Temperatura.'° </h6>';
+    echo '<h6>Humedad: '.$Humedad.'%</h6>';
+    echo '<h6>Gases: '.$Gases.'%</h6>';
+    
 ?>
+</body>
+</html>

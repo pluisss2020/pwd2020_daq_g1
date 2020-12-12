@@ -53,13 +53,53 @@
  		</div>
  		
  		<section class="container">
- 			<h1 class="center-align">MANTENIMIENTO</h1><br>
+ 			<br><h5 class="center-align">Mediciones</h5><br>
  			
-         
-			
-			
- 			
- 			<h6 class="center-align">En la seccion mediciones obtendremos los datos de las mismas<br>Podremos visualizarlas y descargarlas en formato excel :)<br>comodo a la vista del usuario y no sea molesto de utilizar.</h6>
+            <h6 class="center-align">En esta seccion obtendremos los datos de las mediciones en tiempo real.<br>Podremos visualizarlas y descargarlas en formato XLSX</h6><br>
+              
+        <br><h5 class="center-align">Tiempo real</h5><br>
+			<div class="center-align">
+			 <div id="Valores">
+             </div>
+ 			</div><br>
+
+<?php
+                include("action/add.php");
+               
+        //COMIENZO DE LA TABLA
+        ?>
+             <div class="center-align">
+                <div class="row">
+                    <div class="col s12">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>N°</td>
+                                    <td>MEDICION</td>
+                                    <td>VALOR</td>
+                                    <td>FECHA Y HORA</td>
+                                    <td>STATUS</td>
+                                </tr>
+                            </thead>
+                       
+                        <?php
+                            $query="SELECT * FROM mediciones";
+                $resultado= $conexion->query($query);
+                while($row=$resultado->fetch_assoc()){
+                        ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['medicion']?></td>
+                            <td><?php echo $row['valor']?></td>
+                            <td><?php echo $row['fecha_hora']?></td>
+                            <td>Ok</td>
+                        </tr>
+                    <?php } ?>
+                     </table>
+                     <br><a href="exportar.php" class="waves-effect waves-light btn-small">DESCARGAR XLSX</a>
+                    </div>
+                </div>
+             </div>
  			
  		
  			 <!--<div id="Valores">

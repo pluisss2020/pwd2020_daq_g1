@@ -63,11 +63,11 @@
  			
  			<br><h5 class="center-align">Actualizacion</h5><br>
 
- 			<h6 class="center-align">12/12/20 Usuarios por roles, ¡genial!, ahora podremos otorgar<br>permisos tanto de administrador como permiso de usuario.<br>Próximamente datos y exportacion de los mismos a excel.<br><br>Ahora podremos crear usuarios, modificarlos y eliminarlos<br>En la seccion "Usuarios" en la parte inferior encontraremos<br>un boton que dice "VER USUARIOS", ahi podremos ver los<br>mismos, modificarlos y eliminarlos.</h6>
+ 			<h6 class="center-align">12/12/20</h6><br><h6 class="center-align">Mediciones, podremos ver en momento real las mismas<br>Tambien encontraremos una tabla con datos de mediciones<br>los cuales podremos descargar en un archivo XLSX</h6><h6 class="center-align"> Usuarios por roles, ¡genial!, ahora podremos otorgar<br>permisos tanto de administrador como permiso de usuario.<br><br>Ahora podremos crear usuarios, modificarlos y eliminarlos<br>En la seccion "Usuarios" en la parte inferior encontraremos<br>un boton que dice "VER USUARIOS", ahi podremos ver los<br>mismos, modificarlos y eliminarlos.</h6>
 
             <br><h5 class="center-align">Proximamente</h5><br>
 
-            <h6 class="center-align">Sinceramente ya no nos falta mucho para terminar el sitio web<br>ya que aunque aca no este completo tenemos bocetos que tenemos<br>para pasar en limpio con su respectivo CSS, proximamente<br>añadiremos la funcion de mediciones, las cuales podran exportarse<br>a una tabla creada en XLSX (Excel).</h6>
+            <h6 class="center-align">Sinceramente ya no nos falta mucho para terminar el sitio web<br>ya que aunque aca no este completo tenemos bocetos que tenemos<br>para pasar en limpio con su respectivo CSS, proximamente<br>añadiremos la funcion de paginas para usuarios normales<br>los cuales tendran un permiso diferente al administrativo.<br>También queriamos añadir un sistema de graficas.</h6>
  		
  			 <!--<div id="Valores">
              </div> Próximamente-->
