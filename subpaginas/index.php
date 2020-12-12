@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['rol'])){
+        header('location: ../index.php');
+    }else{
+        if($_SESSION['rol'] != 1){
+            header('location: ../index.php');
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +21,7 @@
 	<script src="../js/jquery-3.4.1.min.js" type="text/javascript">
 	</script>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<link href="../css/styles.css" media="screen,projection" rel="stylesheet" type="text/css"> 
+	<link href="../css/main.css" media="screen,projection" rel="stylesheet" type="text/css"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	<script src="../js/index.js" type="text/javascript"></script>
 </head>
@@ -26,6 +36,12 @@
 				<li>
 					<a href="usuarios.php">Usuarios</a>
 				</li>
+                <li>
+                    <a href="mediciones.php">Mediciones</a>
+                </li>
+                <li>
+                    <a href="cerrarsesion.php">Salir</a>
+                </li>
 			</ul>
 		</div>
 	</nav>
@@ -45,9 +61,13 @@
  			
  			<h6 class="center-align">EDITHOR va a cumplir todos los puntos pautados de la materia.<br>La idea del sitio web es que nunca pierda el estilo y siempre sea<br>comodo a la vista del usuario y no sea molesto de utilizar.</h6>
  			
- 			<br><h5 class="center-align">Informacion</h5><br>
+ 			<br><h5 class="center-align">Actualizacion</h5><br>
 
- 			<h6 class="center-align">11/12/20 Por el momento realizamos la interfaz de la pagina.<br>Tenemos planeado terminar esta pagina de una forma rapida<br>creemos que nos tomara 2 dias para completar todo lo restante.</h6><br>
+ 			<h6 class="center-align">12/12/20 Usuarios por roles, ¡genial!, ahora podremos otorgar<br>permisos tanto de administrador como permiso de usuario.<br>Próximamente datos y exportacion de los mismos a excel.<br><br>Ahora podremos crear usuarios, modificarlos y eliminarlos<br>En la seccion "Usuarios" en la parte inferior encontraremos<br>un boton que dice "VER USUARIOS", ahi podremos ver los<br>mismos, modificarlos y eliminarlos.</h6>
+
+            <br><h5 class="center-align">Proximamente</h5><br>
+
+            <h6 class="center-align">Sinceramente ya no nos falta mucho para terminar el sitio web<br>ya que aunque aca no este completo tenemos bocetos que tenemos<br>para pasar en limpio con su respectivo CSS, proximamente<br>añadiremos la funcion de mediciones, las cuales podran exportarse<br>a una tabla creada en XLSX (Excel).</h6>
  		
  			 <!--<div id="Valores">
              </div> Próximamente-->

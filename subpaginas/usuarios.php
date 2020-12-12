@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['rol'])){
+        header('location: ../index.php');
+    }else{
+        if($_SESSION['rol'] != 1){
+            header('location: ../index.php');
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +21,7 @@
 	<script src="../js/jquery-3.4.1.min.js" type="text/javascript">
 	</script>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<link href="../css/styles.css" media="screen,projection" rel="stylesheet" type="text/css"> 
+	<link href="../css/main.css" media="screen,projection" rel="stylesheet" type="text/css"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	<script src="../js/index.js" type="text/javascript"></script>
 </head>
@@ -26,8 +36,16 @@
 				<li>
 					<a href="usuarios.php">Usuarios</a>
 				</li>
+                <li>
+                    <a href="mediciones.php">Mediciones</a>
+                </li>
+                <li>
+                    <a href="cerrarsesion.php">Salir</a>
+                </li>
 			</ul>
+
 		</div>
+
 	</nav>
 
 		<div class="banner">
@@ -37,16 +55,34 @@
  		</div>
  		
  		<section class="container">
- 			<h1 class="center-align">MANTENIMIENTO</h1><br>
+ 		
  			
             
 			
-			<br><h5 class="center-align">¿Que funcion va a cumplir?</h5><br>
+			<br><h5 class="center-align">Usuarios</h5><br>
  			
- 			<h6 class="center-align">En esta seccion podremos cargar usuarios y darles permisos administrativos<br>Tambien poder darlos de baja y modificarlos, dependiendo del permiso<br>los usuarios podran hacer cosas diferentes.</h6>
- 			
- 			
- 		
+ 			<h6 class="center-align">Podras cargar usuarios nuevos, con dos tipos de rango<br>diferentes, entre estos "Administrador" y "Usuario"<br>Recorda escribir el permiso "Administrador" como "1"<br>y el permiso "Usuario" como "2" en el siguiente formulario</h6>
+ 			<div class="center-align">
+ 			 <div class="row">
+                <br><br>
+        <form action="action/adduser.php" method="POST">
+        <div class="input-field col s12">
+          <input class="validate" id="text" name="user" required="required"> <label class="active" for="first_name">Usuario</label>
+        </div>
+        <div class="input-field col s12">
+          <input class="validate" id="text" name="password" required="required"> <label class="active" for="first_name">Contraseña</label>
+        </div>
+        <div class="input-field col s12">
+          <input class="validate" id="text" name="rol_id" required="required"> <label class="active" for="first_name">Rango</label>
+        </div>
+        <input type="submit" value="REGISTRAR" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1"/>
+         <a href="tabla.php" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1">VER USUARIOS</a>
+        </form>
+
+
+    </div>
+
+ 		</div>
  			 <!--<div id="Valores">
              </div> Próximamente-->
  		</section>
