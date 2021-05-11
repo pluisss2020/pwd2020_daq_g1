@@ -14,7 +14,7 @@
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<link href="../img/favicon.png" rel="icon" type="image/png">
-	<title>EDIthor</title>
+	<title>EDIthor │ Usuarios</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="../css/materialize.min.css" media="screen,projection" rel="stylesheet" type="text/css">
 	<link href="../css/style.css" media="screen,projection" rel="stylesheet" type="text/css">

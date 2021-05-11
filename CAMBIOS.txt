@@ -1,0 +1,1 @@
+Hola profe, le dejo adjuntado el SQL y la página que puede medir promedios y busqueda por fechas.

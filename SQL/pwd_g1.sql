@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-12-2020 a las 07:55:54
+-- Tiempo de generación: 06-05-2021 a las 20:43:32
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -24,15 +24,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `graficas`
+--
+
+CREATE TABLE `graficas` (
+  `id` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `temperatura` int(11) NOT NULL,
+  `humedad` int(11) NOT NULL,
+  `gases` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `graficas`
+--
+
+INSERT INTO `graficas` (`id`, `fecha`, `temperatura`, `humedad`, `gases`) VALUES
+(1, '2020-12-02', 37, 22, 12);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `mediciones`
 --
 
 CREATE TABLE `mediciones` (
   `id` int(10) NOT NULL,
-  `tipo_medicion` varchar(15) NOT NULL,
+  `medicion` varchar(25) NOT NULL,
   `valor` decimal(30,0) NOT NULL,
-  `fecha_hora` datetime NOT NULL
+  `fecha_hora` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `mediciones`
+--
+
+INSERT INTO `mediciones` (`id`, `medicion`, `valor`, `fecha_hora`) VALUES
+(1, 'Temperatura', '23', '2021-03-01'),
+(2, 'Humedad', '21', '2021-03-02'),
+(3, 'Gases', '23', '2021-03-03'),
+(4, 'Temperatura', '25', '2021-03-04');
 
 -- --------------------------------------------------------
 
@@ -71,16 +102,25 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `user`, `password`, `rol_id`) VALUES
-(1, 'edithor2', 'pwdg1', 1),
+(1, 'edithor5', 'pwdg5', 1),
 (2, 'admin2', 'pwdg1', 1),
 (3, 'admin3', 'pwdg1', 1),
-(5, 'modificar2', 'pwdg2', 2),
+(5, 'roberto', '1234', 1),
 (6, 'kimba', '1234', 2),
-(7, 'blonds', 'blo123', 2);
+(7, 'blonds', 'blo123', 2),
+(10, 'admin', 'pwdg1', 1),
+(11, 'urano', 'uranus', 1),
+(21, 'admin44', 'pwdg1', 1);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `graficas`
+--
+ALTER TABLE `graficas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `mediciones`
@@ -106,16 +146,22 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `graficas`
+--
+ALTER TABLE `graficas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `mediciones`
 --
 ALTER TABLE `mediciones`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restricciones para tablas volcadas
@@ -127,7 +173,3 @@ ALTER TABLE `usuarios`
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

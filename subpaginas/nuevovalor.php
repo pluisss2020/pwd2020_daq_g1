@@ -14,7 +14,7 @@
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<link href="../img/favicon.png" rel="icon" type="image/png">
-	<title>EDIthor │ Usuarios</title>
+	<title>EDIthor │ Nuevo valor</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="../css/materialize.min.css" media="screen,projection" rel="stylesheet" type="text/css">
 	<link href="../css/style.css" media="screen,projection" rel="stylesheet" type="text/css">
@@ -37,9 +37,6 @@
 					<a href="usuarios.php">Usuarios</a>
 				</li>
                 <li>
-                    <a href="mediciones.php">Mediciones</a>
-                </li>
-                <li>
                     <a href="cerrarsesion.php">Salir</a>
                 </li>
 			</ul>
@@ -59,27 +56,37 @@
  			
             
 			
-			<br><h5 class="center-align">Usuarios</h5><br>
+			<br><h5 class="center-align">Nuevo valor</h5><br>
  			
- 			<h6 class="center-align">Podras cargar usuarios nuevos, con dos tipos de rango<br>diferentes, entre estos "Administrador" y "Usuario"<br>Recorda escribir el permiso "Administrador" como "1"<br>y el permiso "Usuario" como "2" en el siguiente formulario</h6>
+ 			<h6 class="center-align">Estos valores deberian ser actualizados, por un dispositivo Arduino<br>esto es simplemente una simulación, simplemente escribi los campos que<br>quieras cambiar y listo.<br>
  			<div class="center-align">
  			 <div class="row">
                 <br><br>
-        <form action="action/adduser.php" method="POST">
+        <?php
+      //Declara variable ID
+        $id=$_REQUEST['id'];
+        //Hace conexión con la base de datos
+        include("conexion.php");
+        //Selecciona la ID de la tabla usuarios para modificar a partir de ella
+        $query="SELECT * FROM mediciones WHERE id='$id'";
+        $resultado= $conexion->query($query);
+        $row=$resultado->fetch_assoc();
+        ?>
+        <form action="valor_proceso.php?id=<?php echo $row['id']; ?>" method="POST">
         <div class="input-field col s12">
-          <input class="validate" id="text" name="user" required="required"> <label class="active" for="first_name">Usuario</label>
+
+          <input class="validate" id="text" name="medicion" value="<?php echo $row['medicion']; ?>"> <label class="active" for="first_name">Medicion</label>
         </div>
         <div class="input-field col s12">
-          <input class="validate" id="text" name="password" required="required"> <label class="active" for="first_name">Contraseña</label>
+          <input class="validate" id="text" name="valor" value="<?php echo $row['valor']; ?>"> <label class="active" for="first_name">Valor</label>
         </div>
         <div class="input-field col s12">
-          <input class="validate" id="text" name="rol_id" required="required"> <label class="active" for="first_name">Rango</label>
+          <input class="validate" id="time" name="fecha_hora" value="<?php echo $row['fecha_hora']; ?>"> <label class="active" for="first_name">Fecha y Hora</label>
         </div>
-        <form action="tabla.php" method="POST">
-        <input type="submit" href="tabla.php" value="REGISTRAR" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1"/>
-         <a href="tabla.php" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1">VER USUARIOS</a>
+        <input type="submit" value="MODIFICAR" class="waves-effect waves-light btn nicebtn objpadding cyan darken-1"/>
+         
         </form>
-</form>
+
 
     </div>
 
